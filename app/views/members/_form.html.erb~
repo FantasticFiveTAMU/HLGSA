@@ -39,3 +39,4 @@
   </p>
 <% end %>
 
+<%= link_to 'Back', members_path %>
