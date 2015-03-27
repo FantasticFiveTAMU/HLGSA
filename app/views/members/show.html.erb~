@@ -24,11 +24,14 @@
 </p>
  
 <p>
-  <strong>Rank:</strong>
-  <%= @member.rank %>
+  <strong>Designation:</strong>
+  <%= @member.designation %>
 </p>
 
 <p>
   <strong>Paying:</strong>
   <%= @member.paying %>
 </p>
+
+<%= link_to 'Back', members_path %>
+

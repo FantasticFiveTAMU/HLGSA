@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150327201530) do
+ActiveRecord::Schema.define(:version => 20150327223656) do
 
   create_table "members", :force => true do |t|
     t.integer  "uin"
@@ -19,10 +19,10 @@ ActiveRecord::Schema.define(:version => 20150327201530) do
     t.string   "last_name"
     t.string   "email"
     t.string   "department"
-    t.string   "type"
+    t.string   "designation"
     t.boolean  "paying"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
 end
