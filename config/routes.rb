@@ -1,6 +1,7 @@
 Hlgsatracker::Application.routes.draw do
   get 'welcome/index'
   resources :members
+  resources :events
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

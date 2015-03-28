@@ -1,1 +1,4 @@
-<h1>Hello, Rails!</h1>
+<h1>Welcome to HLGSA Tracker!</h1>
+
+<%= link_to 'Enter Members', members_path %>
+<%= link_to 'Enter Events', eventrs_path %>
