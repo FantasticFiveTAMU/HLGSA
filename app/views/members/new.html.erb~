@@ -1,0 +1,42 @@
+<%= form_for :member, url: members_path do |f| %>
+  <p>
+    <%= f.label :uin %><br>
+    <%= f.number_field :uin %>
+  </p>
+ 
+  <p>
+    <%= f.label :first_name %><br>
+    <%= f.text_field :first_name %>
+  </p>
+
+  <p>
+    <%= f.label :last_name %><br>
+    <%= f.text_field :last_name %>
+  </p>
+ 
+  <p>
+    <%= f.label :email %><br>
+    <%= f.email_field :email %>
+  </p>
+ 
+  <p>
+    <%= f.label :department %><br>
+    <%= f.text_field :department %>
+  </p>
+ 
+  <p>
+    <%= f.label :designation %><br>
+    <%= f.text_field :designation %>
+  </p>
+
+  <p>
+    <%= f.label :paying %><br>
+    <%= f.text_field :paying %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', members_path %>
