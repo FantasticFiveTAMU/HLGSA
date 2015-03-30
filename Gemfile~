@@ -32,7 +32,7 @@ gem 'jquery-rails'
 # add to end of Gemfile
 group :test do
 	gem 'cucumber-rails', :require => false
-	gem 'cucumber-rails-training-wheels'	# some pre-fabbed step definitions
+	gem 'cumumber-rails-training-wheels'	# some pre-fabbed step definitions
 	gem 'database_cleaner'	# to clear Cumber's test database between runs
 	gem 'capybara'		# lets Cucumber pretend to be a web broswer
 	gem 'launchy'		# a useful debugging aid for user stories
