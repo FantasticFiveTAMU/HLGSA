@@ -13,9 +13,14 @@ class EventsController < ApplicationController
 
   def create
     @event = Event.new(event_params)
-    
-    @members = Member.where(:id => params[:member_team])
-    @event.members << @members 
+
+    if event_params[:invite] == "all"
+    @members = Member.all
+    @event.members << @members
+    elsif event_params[:invite] == "officers"
+    @members = Member.where(designation: 'officer')
+    @event.members << @members
+    end 
 
     if @event.save
       redirect_to @event
@@ -30,10 +35,16 @@ class EventsController < ApplicationController
 
   def update
     @event = Event.find(params[:id])
-    
-    @members = Member.where(:id => params[:member_team])
+
     @event.members.destroy_all
-    @event.members << @members 
+    
+    if event_params[:invite] == "all"
+    @members = Member.all
+    @event.members << @members
+    elsif event_params[:invite] == "officers"
+    @members = Member.where(designation: 'officer')
+    @event.members << @members
+    end 
 
     if @event.update_attributes(event_params)
       redirect_to @event
@@ -48,9 +59,13 @@ class EventsController < ApplicationController
     redirect_to events_path
   end
 
+  def track
+    @event = Event.find(params[:id])
+  end
+
   private
     def event_params
-      params.require(:event).permit(:title, :date, :time, :location, :description)
+      params.require(:event).permit(:title, :date, :time, :location, :description, :invite)
     end
 
 end

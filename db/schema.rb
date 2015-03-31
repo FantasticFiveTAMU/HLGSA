@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(:version => 20150331002808) do
     t.time     "time"
     t.string   "location"
     t.text     "description"
+    t.string   "invite"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end

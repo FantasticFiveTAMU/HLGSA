@@ -2,26 +2,6 @@
   <strong>Title:</strong>
   <%= @event.title %>
 </p>
- 
-<p>
-  <strong>Date:</strong>
-  <%= @event.date %>
-</p>
-
-<p>
-  <strong>Time:</strong>
-  <%= @event.time.to_s(:time) %>
-</p>
- 
-<p>
-  <strong>Location:</strong>
-  <%= @event.location %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @event.description %>
-</p>
 
 <p>
 <strong>Invited:</strong>
@@ -29,16 +9,17 @@
   <tr>
     <th>Last Name</th>
     <th>First Name</th>
+    <th>Attended</th>
   </tr>
 <% @event.members.each do |member| %>
 <tr>
    <td><%= member.last_name %></td>
    <td><%= member.first_name %></td>
+   <td><%= member.check_box :attended %></td>
 </tr>
 <%end %>
 </table>
 </p>
 
-<%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>
 

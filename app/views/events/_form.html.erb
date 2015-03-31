@@ -39,10 +39,13 @@
     <%= f.text_area :description %>
   </p>
 
- <p>
-<%= f.label :members %>
-<%= select_tag "member_team", options_from_collection_for_select(Member.all, 'id', 'first_name',@event.members.map{ |j| j.id }), :multiple => true %>
- </p>
+<p>
+    <%= f.label :invite %><br>
+    <%= f.radio_button :invite, 'all', :checked => true %>
+    <%= label :status_all, 'All Members' %>
+    <%= f.radio_button :invite, 'officers' %>
+    <%= label :status_officers, 'Officers Only' %>
+</p>
 
   <p>
     <%= f.submit %>

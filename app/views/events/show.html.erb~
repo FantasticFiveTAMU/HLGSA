@@ -10,7 +10,7 @@
 
 <p>
   <strong>Time:</strong>
-  <%= @event.time %>
+  <%= @event.time.to_s(:time) %>
 </p>
  
 <p>
@@ -23,17 +23,16 @@
   <%= @event.description %>
 </p>
 
-
-<p>
-  <strong>Invited:</strong>
-  <%= @event.members %>
-</p>
-
 <p>
 <strong>Invited:</strong>
+<table>
 <% @event.members.each do |member| %>
-   <%= member.first_name %>
+<tr>
+   <td><%= member.last_name %></td>
+   <td><%= member.first_name %></td>
+</tr>
 <%end %>
+</table>
 </p>
 
 <%= link_to 'Edit', edit_event_path(@event) %> |

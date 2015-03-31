@@ -42,19 +42,25 @@
   <p>
     <%= f.label :designation %><br>
     <%= f.radio_button :designation, 'member', :checked => true %>
+    <%= label :designation_member, 'Member' %>
     <%= f.radio_button :designation, 'officer' %>
+    <%= label :designation_officer, 'Officer' %>
   </p>
 
   <p>
     <%= f.label :paying %><br>
     <%= f.radio_button :paying, 'no', :checked => true %>
+    <%= label :paying_no, 'No' %>
     <%= f.radio_button :paying, 'yes' %>
+    <%= label :paying_yes, 'Yes' %>
   </p>
 
   <p>
     <%= f.label :status %><br>
     <%= f.radio_button :status, 'student', :checked => true %>
+    <%= label :status_student, 'Student' %>
     <%= f.radio_button :status, 'graduated' %>
+    <%= label :status_graduated, 'Graduated' %>
   </p>
 
   <p>
