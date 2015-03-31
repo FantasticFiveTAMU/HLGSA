@@ -1,4 +1,4 @@
-<%= form_for :member, url: members_path do |f| %>
+<%= form_for @member do |f| %>
 
   <% if @member.errors.any? %>
     <div id="error_explanation">
@@ -41,13 +41,17 @@
  
   <p>
     <%= f.label :designation %><br>
-    <%= f.text_field :designation %>
+    <%= f.radio_button :designation, 'member', :checked => true %>
+    <%= f.radio_button :designation, 'officer' %>
   </p>
 
   <p>
     <%= f.label :paying %><br>
-    <%= f.text_field :paying %>
+    <%= f.radio_button :paying, 'no', :checked => true %>
+    <%= f.radio_button :paying, 'yes' %>
   </p>
+
+
 
   <p>
     <%= f.submit %>

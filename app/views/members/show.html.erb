@@ -34,6 +34,11 @@
 </p>
 
 <p>
+  <strong>Status:</strong>
+  <%= @member.status %>
+</p>
+
+<p>
 <strong>Events:</strong>
 <% @member.events.each do |event| %>
    <%= event.title %>

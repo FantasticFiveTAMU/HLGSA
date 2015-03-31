@@ -15,8 +15,8 @@ ActiveRecord::Schema.define(:version => 20150331002808) do
 
   create_table "events", :force => true do |t|
     t.string   "title"
-    t.string   "date"
-    t.string   "time"
+    t.date     "date"
+    t.time     "time"
     t.string   "location"
     t.text     "description"
     t.datetime "created_at",  :null => false
@@ -35,7 +35,8 @@ ActiveRecord::Schema.define(:version => 20150331002808) do
     t.string   "email"
     t.string   "department"
     t.string   "designation"
-    t.boolean  "paying"
+    t.string   "status"
+    t.string   "paying"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end

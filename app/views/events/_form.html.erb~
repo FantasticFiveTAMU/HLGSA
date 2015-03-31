@@ -21,12 +21,12 @@
  
   <p>
     <%= f.label :date %><br>
-    <%= f.text_field :date %>
+    <%= f.date_field :date %>
   </p>
 
   <p>
     <%= f.label :time %><br>
-    <%= f.text_field :time %>
+    <%= f.time_field :time %>
   </p>
  
   <p>
@@ -38,7 +38,11 @@
     <%= f.label :description %><br>
     <%= f.text_area :description %>
   </p>
- 
+
+ <p>
+<%= f.label :members %>
+<%= select_tag "member_team", options_from_collection_for_select(Member.all, 'id', 'first_name',@event.members.map{ |j| j.id }), :multiple => true %>
+ </p>
 
   <p>
     <%= f.submit %>
