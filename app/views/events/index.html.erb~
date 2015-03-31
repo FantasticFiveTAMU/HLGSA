@@ -7,14 +7,14 @@
     <th>Time</th>
   </tr>
  
-  <% @members.each do |member| %>
+  <% @events.each do |event| %>
     <tr>
-      <td><%= member.uin %></td>
-      <td><%= member.last_name %></td>
-      <td><%= member.first_name %></td>
-      <td><%= link_to 'Show', member_path(member) %></td>
-      <td><%= link_to 'Edit', edit_member_path(member) %></td>
-      <td><%= link_to 'Destroy', member_path(member),
+      <td><%= event.title %></td>
+      <td><%= event.date %></td>
+      <td><%= event.time %></td>
+      <td><%= link_to 'Show', event_path(event) %></td>
+      <td><%= link_to 'Edit', edit_event_path(event) %></td>
+      <td><%= link_to 'Destroy', event_path(event),
               method: :delete,
               data: { confirm: 'Are you sure?' } %></td>
     </tr>

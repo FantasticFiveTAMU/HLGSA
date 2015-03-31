@@ -23,10 +23,11 @@
   <%= @event.description %>
 </p>
 
-
 <p>
-  <strong>Invited:</strong>
-  <%= @event.members %>
+<strong>Invited:</strong>
+<% @event.members.each do |member| %>
+   <%= member.first_name %>
+<%end %>
 </p>
 
 <%= link_to 'Edit', edit_event_path(@event) %> |

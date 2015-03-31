@@ -33,6 +33,14 @@
   <%= @member.paying %>
 </p>
 
+
+<p>
+<strong>Events:</strong>
+<% @member.events.each do |event| %>
+   <%= @event.title %>
+<%end %>
+</p>
+
 <%= link_to 'Edit', edit_member_path(@member) %> |
 <%= link_to 'Back', members_path %>
 

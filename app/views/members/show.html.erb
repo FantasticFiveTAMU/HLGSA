@@ -34,8 +34,10 @@
 </p>
 
 <p>
-  <strong>Events:</strong>
-  <%= @member.events %>
+<strong>Events:</strong>
+<% @member.events.each do |event| %>
+   <%= event.title %>
+<%end %>
 </p>
 
 <%= link_to 'Edit', edit_member_path(@member) %> |
