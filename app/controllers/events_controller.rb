@@ -13,6 +13,10 @@ class EventsController < ApplicationController
 
   def create
     @event = Event.new(event_params)
+    
+    @members = Member.where(:id => params[:member_team])
+    @event.members << @members 
+
     if @event.save
       redirect_to @event
     else
@@ -26,6 +30,11 @@ class EventsController < ApplicationController
 
   def update
     @event = Event.find(params[:id])
+    
+    @members = Member.where(:id => params[:member_team])
+    @event.members.destroy_all
+    @event.members << @members 
+
     if @event.update_attributes(event_params)
       redirect_to @event
     else
