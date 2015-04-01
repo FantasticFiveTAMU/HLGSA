@@ -41,14 +41,14 @@
 
 <p>
     <%= f.label :invite %><br>
-    <%= f.radio_button_tag :invite, 'all', :checked => true %>
+    <%= f.radio_button :invite, 'all', :checked => true %>
     <%= label :status_all, 'All Members' %>
-    <%= f.radio_button_tag :invite, 'officers' %>
+    <%= f.radio_button :invite, 'officers' %>
     <%= label :status_officers, 'Officers Only' %>
 </p>
 
   <p>
-    <%= f.submit %>
+    <%= f.submit, :name => 'form' %>
   </p>
 <% end %>
 

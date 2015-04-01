@@ -4,6 +4,7 @@ Hlgsatracker::Application.routes.draw do
   resources :events
 
 match 'track' => "events#track"
+match 'attend' => "events#attend"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

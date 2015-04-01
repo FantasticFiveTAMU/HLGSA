@@ -1,0 +1,10 @@
+<%= form_for @event, url: attend_path do |a| %>
+    <% @event.members.each do |member| %>
+       <%= check_box_tag 'event_member_id[]', member.id %>
+	<%= hidden_field_tag 'event_id', event.id %> 
+       <%= member.last_name %>
+    <% end %>
+  <p>
+    <%= a.submit 'Track Attendance'%>
+  </p>
+<% end %>

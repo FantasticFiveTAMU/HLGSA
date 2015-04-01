@@ -3,22 +3,8 @@
   <%= @event.title %>
 </p>
 
-<p>
-<strong>Invited:</strong>
-<table>
-  <tr>
-    <th>Last Name</th>
-    <th>First Name</th>
-    <th>Attended</th>
-  </tr>
-<% @event.members.each do |member| %>
-<tr>
-   <td><%= member.last_name %></td>
-   <td><%= member.first_name %></td>
-</tr>
-<%end %>
-</table>
-</p>
+ <%= render 'att' %>
+
 
 <%= link_to 'Back', events_path %>
 

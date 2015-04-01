@@ -36,14 +36,14 @@ class EventsController < ApplicationController
   def update
     @event = Event.find(params[:id])
 
-    @event.members.destroy_all
-    
     if event_params[:invite] == "all"
-    @members = Member.all
-    @event.members << @members
+     @event.members.destroy_all
+     @members = Member.all
+     @event.members << @members
     elsif event_params[:invite] == "officers"
-    @members = Member.where(designation: 'officer')
-    @event.members << @members
+     @event.members.destroy_all
+     @members = Member.where(designation: 'officer')
+     @event.members << @members
     end 
 
     if @event.update_attributes(event_params)
@@ -63,10 +63,14 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
   end
 
-  def not_attend
-    @event.members.destroy(@member)
-    redirect_to @event 
-  end
+def attend
+@event = Event.find(params[:event_id].to_s)
+@event.members.destroy_all
+@member = Member.find(params[:event_member_id.to_s])
+@event.members << @member
+render text: params[:event_member_id].inspect
+
+end
 
   private
     def event_params

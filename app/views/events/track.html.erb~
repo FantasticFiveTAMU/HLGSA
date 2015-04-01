@@ -3,23 +3,6 @@
   <%= @event.title %>
 </p>
 
-<p>
-<strong>Invited:</strong>
-<table>
-  <tr>
-    <th>Last Name</th>
-    <th>First Name</th>
-    <th>Attended</th>
-  </tr>
-<% @event.members.each do |member| %>
-<tr>
-   <td><%= member.last_name %></td>
-   <td><%= member.first_name %></td>
-   <td><%= member.check_box :attended %></td>
-</tr>
-<%end %>
-</table>
-</p>
 
 <%= link_to 'Back', events_path %>
 
