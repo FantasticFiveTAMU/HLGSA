@@ -15,6 +15,14 @@ module NavigationHelpers
 
     when /^the home\s?page$/
       '/'
+	when /^the HLGSA home page/
+	'/welcome/index'
+	when /^the Listing members page/
+	'/members'
+	when /^the New member page/
+	'/members/new'
+	when /^the corresponding Member page/
+	'/members/1'
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
