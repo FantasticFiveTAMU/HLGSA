@@ -68,7 +68,8 @@ class EventsController < ApplicationController
     @event.members.destroy_all
     @member = Member.find(params[:event_member_id.to_s])
     @event.members << @member
-    render text: params[:event_member_id].inspect
+    redirect_to @event
+    #render text: params[:event_member_id].inspect
 end
 
   private

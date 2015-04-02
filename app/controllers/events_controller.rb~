@@ -63,13 +63,13 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
   end
 
-def attend
-@event = Event.find(params[:event_id].to_s)
-@event.members.destroy_all
-@member = Member.find(params[:event_member_id.to_s])
-@event.members << @member
-render text: params[:event_member_id].inspect
-
+  def attend
+    @event = Event.find(params[:event_id].to_s)
+    @event.members.destroy_all
+    @member = Member.find(params[:event_member_id.to_s])
+    @event.members << @member
+    redirect_to @event
+    #render text: params[:event_member_id].inspect
 end
 
   private
