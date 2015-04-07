@@ -1,19 +1,26 @@
 source 'https://rubygems.org'
 
+ruby '1.9.3'
+
 gem 'rails', '3.2.16'
+#gem 'rails', '4.2.1'
 
 gem 'strong_parameters'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
-
 # Use Haml for templates
 gem 'haml'
 # Use Ruby debugger
 group :development, :test do
   gem 'debugger'
+  gem 'sqlite3'
+end
+
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
 end
 
 

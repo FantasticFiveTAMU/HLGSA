@@ -7,7 +7,8 @@ class CreateMembers < ActiveRecord::Migration
       t.string :email
       t.string :department
       t.string :designation
-      t.boolean :paying
+      t.string :status
+      t.string :paying
 
       t.timestamps
     end

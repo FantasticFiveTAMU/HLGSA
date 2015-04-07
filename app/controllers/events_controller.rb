@@ -13,6 +13,15 @@ class EventsController < ApplicationController
 
   def create
     @event = Event.new(event_params)
+
+    if event_params[:invite] == "all"
+    @members = Member.all
+    @event.members << @members
+    elsif event_params[:invite] == "officers"
+    @members = Member.where(designation: 'officer')
+    @event.members << @members
+    end 
+
     if @event.save
       redirect_to @event
     else
@@ -26,6 +35,17 @@ class EventsController < ApplicationController
 
   def update
     @event = Event.find(params[:id])
+
+    if event_params[:invite] == "all"
+     @event.members.destroy_all
+     @members = Member.all
+     @event.members << @members
+    elsif event_params[:invite] == "officers"
+     @event.members.destroy_all
+     @members = Member.where(designation: 'officer')
+     @event.members << @members
+    end 
+
     if @event.update_attributes(event_params)
       redirect_to @event
     else
@@ -39,9 +59,22 @@ class EventsController < ApplicationController
     redirect_to events_path
   end
 
+  def track
+    @event = Event.find(params[:id])
+  end
+
+  def attend
+    @event = Event.find(params[:event_id].to_s)
+    @event.members.destroy_all
+    @member = Member.find(params[:event_member_id.to_s])
+    @event.members << @member
+    redirect_to @event
+    #render text: params[:event_member_id].inspect
+end
+
   private
     def event_params
-      params.require(:event).permit(:title, :date, :time, :location, :description)
+      params.require(:event).permit(:title, :date, :time, :location, :description, :invite)
     end
 
 end

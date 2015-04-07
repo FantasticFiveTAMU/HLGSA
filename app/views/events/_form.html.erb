@@ -38,7 +38,14 @@
     <%= f.label :description %><br>
     <%= f.text_area :description %>
   </p>
- 
+
+<p>
+    <%= f.label :invite %><br>
+    <%= f.radio_button :invite, 'all', :checked => true %>
+    <%= label :status_all, 'All Members' %>
+    <%= f.radio_button :invite, 'officers' %>
+    <%= label :status_officers, 'Officers Only' %>
+</p>
 
   <p>
     <%= f.submit %>
