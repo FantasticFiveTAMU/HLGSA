@@ -4,7 +4,8 @@ require 'rails_helper'
 describe MembersController do
   
   before :each do
-    @member = Member.new
+    @member = Member.create!
+    @member2 = Member.create!
   end
 
   describe '#new' do
@@ -14,8 +15,19 @@ describe MembersController do
   end
 
   describe '#index' do
-    it 'should return all the instances of Member' do
-      expect(@member.all).to be_an Member
+    it 'all instances should be in Member.all' do
+      expect(@member && @member2).to be_in Member.all
+    end
+  end
+
+  describe '#show' do
+    it '@member is the same as requested' do
+      expect(@member).to eql Member.find(1)
+    end
+  end
+
+  describe '#create' do
+    it '' do
     end
   end
 
