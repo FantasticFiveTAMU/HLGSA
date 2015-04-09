@@ -1,3 +1,31 @@
 // Place all the styles related to the members controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.members_table {
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 60px;
+}
+
+table#members {
+  margin-top: 20px;
+  border-collapse: collapse;
+  width: 100%;
+  border-bottom: 2px solid black;
+}
+
+table#members th{
+  border: 2px solid white;
+  font-weight: bold;
+  background-color:wheat;
+}
+
+table#members th, table#members td{
+  padding: 4px;
+  text-align: center;
+}
+
+table#members td.action_button{
+  width: 15%;
+}
