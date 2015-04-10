@@ -4,8 +4,9 @@ require 'rails_helper'
 describe MembersController do
   
   before :each do
-    @member = Member.create!
-    @member2 = Member.create!
+    @member = Member.create(uin: "1111", first_name: "Name", last_name: "LastName", email: "name@email.com", department: "TAMU", designation: "officer", paying: "yes", status: "student")
+
+    @member2 = Member.create(uin: "2222", first_name: "Name2", last_name: "LastName2", email: "name2@email.com", department: "TAMU", designation: "member", paying: "no", status: "graduated")
   end
 
   describe '#new' do
