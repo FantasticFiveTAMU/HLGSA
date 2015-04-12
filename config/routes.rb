@@ -1,8 +1,14 @@
 Hlgsatracker::Application.routes.draw do
+  get "sessions/new"
+
+  get "users/new"
+  get 'login' => 'sessions#new'
+    post 'login' => 'sessions#create'
+    delete 'logout' => 'sessions#destroy'
   get 'welcome/index'
   resources :members
   resources :events
-
+  resources :users
 match 'track' => "events#track"
 match 'attend' => "events#attend"
 
