@@ -12,6 +12,11 @@
   height:70px;
 
 }
+
+.list{
+position: relative;
+top: 30%;
+}
 .title{
   color: white;
   text-align: center;
