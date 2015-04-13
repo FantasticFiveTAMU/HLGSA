@@ -9,10 +9,11 @@
 }
 
 table#members {
-  margin-top: 20px;
-  border-collapse: collapse;
-  width: 100%;
-  border-bottom: 2px solid black;
+position: relative;
+top: 30%;
+border-collapse: collapse;
+width: 100%;
+border-bottom: 2px solid black;
 }
 
 table#members th{
