@@ -12,7 +12,13 @@
   height:70px;
 
 }
-
+.list a {
+text-decoration: none;
+font-family: "proxima-nova",sans-serif,'Helvetica Neue',Helvetica,Arial,sans-serif;
+font-size: 20px;
+font-style: inherit;
+color: #500000;
+}
 .list{
 position: relative;
 top: 30%;
