@@ -6,6 +6,8 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:session][:password])
       log_in user
       redirect_to welcome_index_path
+    else
+      render new
     end
   end
   def destroy
