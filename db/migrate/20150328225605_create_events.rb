@@ -7,6 +7,7 @@ class CreateEvents < ActiveRecord::Migration
       t.string :location
       t.text :description
       t.string :invite
+			t.boolean :tracked
 
       t.timestamps
     end

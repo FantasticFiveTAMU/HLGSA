@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(:version => 20150331002808) do
     t.string   "location"
     t.text     "description"
     t.string   "invite"
+    t.boolean  "tracked"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end

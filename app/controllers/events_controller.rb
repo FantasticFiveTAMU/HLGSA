@@ -13,7 +13,7 @@ class EventsController < ApplicationController
 
   def create
     @event = Event.new(event_params)
-    
+    @event.tracked = false
     if event_params[:invite] == "all"
     @members = Member.all
     @event.members << @members				#if all members are invited, insert all members in the join table
@@ -23,6 +23,7 @@ class EventsController < ApplicationController
     end 
 
     if @event.save
+	flash[:notice] = "Event successfully created"
       redirect_to @event
     else
       render 'new'
@@ -35,22 +36,27 @@ class EventsController < ApplicationController
 
   def update
     @event = Event.find(params[:id])
+		if @event.tracked == false
+				if event_params[:invite] == "all"
+				 @event.members.destroy_all
+				 @members = Member.all
+				 @event.members << @members				#if all members are invited, insert all members in the join table
+				elsif event_params[:invite] == "officers"
+				 @event.members.destroy_all
+				 @members = Member.where(designation: 'officer')
+				 @event.members << @members				#if only officers are invited, insert members with officer designation only in the join table
+				end 
 
-    if event_params[:invite] == "all"
-     @event.members.destroy_all
-     @members = Member.all
-     @event.members << @members				#if all members are invited, insert all members in the join table
-    elsif event_params[:invite] == "officers"
-     @event.members.destroy_all
-     @members = Member.where(designation: 'officer')
-     @event.members << @members				#if only officers are invited, insert members with officer designation only in the join table
-    end 
-
-    if @event.update_attributes(event_params)
-      redirect_to @event
-    else
-      render 'edit'
-    end
+				if @event.update_attributes(event_params)
+			flash[:notice] = "Event successfully updated"
+				  redirect_to @event
+				else
+				  render 'edit'
+				end
+		else
+			flash[:notice] = "Event has already been tracked"
+			redirect_to @event
+		end
   end
 
   def destroy
@@ -68,7 +74,8 @@ class EventsController < ApplicationController
     @event.members.destroy_all			#after loading all invitees, destroy all entries so we can save only the attendees
     @member = Member.find(params[:event_member_id.to_s])
     @event.members << @member				#insert into the join table only those members with checked boxes
-    redirect_to @event
+	  @event.tracked = true
+		redirect_to @event
 end
 
   private

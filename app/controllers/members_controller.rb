@@ -14,6 +14,7 @@ class MembersController < ApplicationController
   def create
     @member = Member.new(member_params)
     if @member.save
+	flash[:notice] = "Member successfully created"
       redirect_to @member
     else
       render 'new'
@@ -27,6 +28,7 @@ class MembersController < ApplicationController
   def update
     @member = Member.find(params[:id])
     if @member.update_attributes(member_params)
+	flash[:notice] = "Member successfully updated"
       redirect_to @member
     else
       render 'edit'
