@@ -67,7 +67,20 @@ module Hlgsatracker
 
 
 
+	# Don't care if the mailer can't send
+	config.action_mailer.raise_delivery_errors = true # still no logs about emails
 
+	config.action_mailer.delivery_method = :smtp
+	config.action_mailer.perform_deliveries = true # I can't believe I have to add this option. Does it even exist? I found it on google.
+	config.action_mailer.smtp_settings = {
+  :enable_starttls_auto => true,
+  :address => "smtp.gmail.com",
+  :port => 587,
+  :domain => "gmail.com",
+  :authentication => :login,
+  :user_name => "saashlgsa@gmail.com",
+  :password => "saasmail",
+	}
 
 
 

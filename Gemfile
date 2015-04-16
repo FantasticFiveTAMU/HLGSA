@@ -54,8 +54,7 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'debugger'
-#<<<<<<< HEAD
-#=======
+
 
 group :test, :development do
   gem 'rspec-rails'
@@ -63,4 +62,3 @@ group :test, :development do
   gem 'autotest-rails'
   gem 'simplecov'
 end
-#>>>>>>> tdd
