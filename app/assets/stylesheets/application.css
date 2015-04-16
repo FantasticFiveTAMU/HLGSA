@@ -11,3 +11,25 @@
  *= require_self
  *= require_tree .
  */
+.top_buttons {
+  float: left;
+  width: 100%;
+  margin-left: 50%;
+}
+
+.page_button1 {
+  float: left;
+  width: 130px;
+  margin-left: -135px;
+}
+
+.page_button2 {
+  float: left;
+  width: 130px;
+  margin-left: 5px;
+}
+
+.action_button {
+  width: 90%;
+  white-space: normal;
+}
