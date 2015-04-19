@@ -17,9 +17,13 @@ class EventsController < ApplicationController
     if event_params[:invite] == "all"
     @members = Member.all
     @event.members << @members
+    @mail_list = @members.map(&:email)
+    EventMailer.event_invite(@mail_list).deliver!
     elsif event_params[:invite] == "officers"
     @members = Member.where(designation: 'officer')
     @event.members << @members
+    @mail_list = @members.map(&:email)
+    EventMailer.event_invite(@mail_list).deliver!
     end 
 
     if @event.save
@@ -43,7 +47,7 @@ class EventsController < ApplicationController
     elsif event_params[:invite] == "officers"
      @event.members.destroy_all
      @members = Member.where(designation: 'officer')
-     @event.members << @members
+     @event.members << @members 
     end 
 
     if @event.update_attributes(event_params)
