@@ -32,4 +32,20 @@
 .action_button {
   width: 90%;
   white-space: normal;
+  height: auto;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+#hlgsalogo {
+  background-image: url("/assets/headerimage.jpg");
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: 485px 150px;
+  height: 150px;
+  margin-top: 20px;
+}
+
+h1 {
+  text-align: center;
 }
