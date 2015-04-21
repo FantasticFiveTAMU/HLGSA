@@ -45,6 +45,12 @@ Given /^(?:|I )am on (.+)$/ do |page_name|
   visit path_to(page_name)
 end
 
+Given(/^a member exists with department "(.*?)" and designation "(.*?)" and email "(.*?)" and first_name "(.*?)" and last_name "(.*?)" and paying "(.*?)" and status "(.*?)" and uin: "(.*?)"$/) do |arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8|
+	#needed code goes here
+	Member.create(department: arg1, designation: arg2, email: arg3, first_name: arg4, last_name: arg5, paying: arg6, status: arg7, uin: arg8)
+end
+
+
 When /^(?:|I )go to (.+)$/ do |page_name|
   visit path_to(page_name)
 end
@@ -76,6 +82,10 @@ end
 # TODO: Add support for checkbox, select or option
 # based on naming conventions.
 #
+When /^I confirm delete popup$/ do
+	visit path_to("the Listing members pagepage_name")
+end
+
 When /^(?:|I )fill in the following:$/ do |fields|
   fields.rows_hash.each do |name, value|
     When %{I fill in "#{name}" with "#{value}"}
@@ -178,15 +188,15 @@ Then /^the "([^"]*)" field should have the error "([^"]*)"$/ do |field, error_me
 
   if page.respond_to?(:should)
     if using_formtastic
-      error_paragraph = element.find(:xpath, '../*[@class="inline-errors"][1]')
-      error_paragraph.should have_content(error_message)
+      error_parargaph = element.find(:xpath, '../*[@class="inline-errors"][1]')
+      error_parargaph.should have_content(error_message)
     else
       page.should have_content("#{field.titlecase} #{error_message}")
     end
   else
     if using_formtastic
-      error_paragraph = element.find(:xpath, '../*[@class="inline-errors"][1]')
-      assert error_paragraph.has_content?(error_message)
+      error_parargaph = element.find(:xpath, '../*[@class="inline-errors"][1]')
+      assert error_parargaph.has_content?(error_message)
     else
       assert page.has_content?("#{field.titlecase} #{error_message}")
     end

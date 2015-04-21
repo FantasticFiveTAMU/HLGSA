@@ -45,6 +45,9 @@ group :test do
 	gem 'database_cleaner'	# to clear Cumber's test database between runs
 	gem 'capybara'		# lets Cucumber pretend to be a web broswer
 	gem 'launchy'		# a useful debugging aid for user stories
+	#gem 'cucumber_factory'
+	gem 'pickle'
+	#gem 'factory_girl_rails'
 end
 
 # To use ActiveModel has_secure_password

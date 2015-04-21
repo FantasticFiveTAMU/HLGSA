@@ -11,8 +11,9 @@ Scenario: Add a member
 	And I fill in "Last name" with "Smith"
 	And I fill in "Email" with "jsmith@tamu.edu"
 	And I fill in "Department" with "CSCE"
-	And I fill in "Designation" with "Member"
-	And I fill in "Paying" with "t"
+	And I choose "member_designation_member"
+	And I choose "member_paying_yes"
+	And I choose "member_status_student"
 	And I press "Create Member"
 	Then I should be on the corresponding Member page
 	
