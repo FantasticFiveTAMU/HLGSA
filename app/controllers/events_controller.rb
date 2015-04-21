@@ -83,12 +83,6 @@ flash[:notice] = "Event successfully updated"
 		redirect_to @event
 end
 
-	def attendance_tracked
-		if @event.tracked
-		true
-		end
-	end
-
   private
     def event_params
       params.require(:event).permit(:title, :date, :time, :location, :description, :invite)
