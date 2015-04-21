@@ -8,11 +8,4 @@ class Event < ActiveRecord::Base
   validates :location, presence: true
   validates :description, presence: true
 
-#private
-#  def require_event_not_tracked
-#    if self.tracked
-#      # Add an error, fail validation etc. Prevent the model from saving
-#    end
-#  end
-
 end

@@ -1,4 +1,5 @@
 class EventsController < ApplicationController
+
   def new
     @event = Event.new 
   end
@@ -35,7 +36,7 @@ class EventsController < ApplicationController
   end
 
   def update
-    @event = Event.find(params[:id])
+			@event = Event.find(params[:id])
 			if event_params[:invite] == "all"
 			 @event.members.destroy_all
 			 @members = Member.all
@@ -69,8 +70,16 @@ class EventsController < ApplicationController
     @event.members.destroy_all			#after loading all invitees, destroy all entries so we can save only the attendees
     @member = Member.find(params[:event_member_id.to_s])
     @event.members << @member				#insert into the join table only those members with checked boxes
+		@event.update_attribute :tracked, true
+		flash[:notice] = "Attendance has been tracked."
 		redirect_to @event
 end
+
+	def attendance_tracked
+		if @event.tracked
+		true
+		end
+	end
 
   private
     def event_params
