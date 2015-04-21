@@ -18,12 +18,12 @@ class EventsController < ApplicationController
     @members = Member.all
     @event.members << @members
     @mail_list = @members.map(&:email)
-    EventMailer.event_invite(@mail_list).deliver!
+    EventMailer.event_invite(@mail_list, @event).deliver!
     elsif event_params[:invite] == "officers"
     @members = Member.where(designation: 'officer')
     @event.members << @members
     @mail_list = @members.map(&:email)
-    EventMailer.event_invite(@mail_list).deliver!
+    EventMailer.event_invite(@mail_list, @event).deliver!
     end 
 
     if @event.save
@@ -51,6 +51,8 @@ class EventsController < ApplicationController
     end 
 
     if @event.update_attributes(event_params)
+      @mail_list = @members.map(&:email)
+      EventMailer.event_update(@mail_list, @event).deliver!
       redirect_to @event
     else
       render 'edit'

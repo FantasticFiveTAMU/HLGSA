@@ -16,7 +16,7 @@
       <tr>
         <td><%= event.title %></td>
         <td><%= event.date %></td>
-        <td><%= event.time.to_s(:time) %></td>
+        <td><%= event.time %></td>
         <td class="action_button"><%= button_to 'Show Details', event_path(event), class: "action_button", method: :get %></td>
         <td class="action_button"><%= button_to 'Edit Event', edit_event_path(event), class: "action_button", method: :get %></td>
         <td class="action_button"><%= button_to 'Delete Event', event_path(event), class: "action_button",
