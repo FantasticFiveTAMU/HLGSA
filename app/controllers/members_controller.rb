@@ -14,7 +14,11 @@ class MembersController < ApplicationController
   def create
     @member = Member.new(member_params)
     if @member.save
+
 	flash[:notice] = "Member successfully created"
+    	# Tell the UserMailer to send a welcome email after save
+      EventMailer.welcome_mail(@member).deliver!
+
       redirect_to @member
     else
       render 'new'

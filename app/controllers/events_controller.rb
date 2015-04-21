@@ -17,10 +17,16 @@ class EventsController < ApplicationController
     @event.tracked = false
     if event_params[:invite] == "all"
     @members = Member.all
-    @event.members << @members				#if all members are invited, insert all members in the join table
+
+    @event.members << @members
+    @mail_list = @members.map(&:email)
+    EventMailer.event_invite(@mail_list, @event).deliver!
     elsif event_params[:invite] == "officers"
     @members = Member.where(designation: 'officer')
-    @event.members << @members				#if only officers are invited, insert members with officer designation only in the join table
+    @event.members << @members
+    @mail_list = @members.map(&:email)
+    EventMailer.event_invite(@mail_list, @event).deliver!
+
     end 
 
     if @event.save
@@ -47,12 +53,14 @@ class EventsController < ApplicationController
 			 @event.members << @members				#if only officers are invited, insert members with officer designation only in the join table
 			end 
 
-			if @event.update_attributes(event_params)
-		flash[:notice] = "Event successfully updated"
-			  redirect_to @event
-			else
-			  render 'edit'
-			end
+    if @event.update_attributes(event_params)
+flash[:notice] = "Event successfully updated"
+      @mail_list = @members.map(&:email)
+      EventMailer.event_update(@mail_list, @event).deliver!
+      redirect_to @event
+    else
+      render 'edit'
+    end
   end
 
   def destroy
