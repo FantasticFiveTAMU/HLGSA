@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(:version => 20150413010558) do
   create_table "events", :force => true do |t|
     t.string   "title"
     t.date     "date"
-    t.time     "time"
+    t.string   "time"
     t.string   "location"
     t.text     "description"
     t.string   "invite"
