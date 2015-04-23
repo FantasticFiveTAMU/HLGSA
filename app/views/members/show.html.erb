@@ -1,50 +1,48 @@
-<p>
-  <strong>UIN:</strong>
-  <%= @member.uin %>
-</p>
- 
-<p>
-  <strong>First Name:</strong>
-  <%= @member.first_name %>
-</p>
-
-<p>
-  <strong>Last Name:</strong>
-  <%= @member.last_name %>
-</p>
- 
-<p>
-  <strong>Email:</strong>
-  <%= @member.email %>
-</p>
-
-<p>
-  <strong>Department:</strong>
-  <%= @member.department %>
-</p>
- 
-<p>
-  <strong>Designation:</strong>
-  <%= @member.designation %>
-</p>
-
-<p>
-  <strong>Paying:</strong>
-  <%= @member.paying %>
-</p>
-
-<p>
-  <strong>Status:</strong>
-  <%= @member.status %>
-</p>
-
-<p>
-<strong>Events:</strong>
-<% @member.events.each do |event| %>
-   <%= event.title %>
-<%end %>
-</p>
-
-<%= link_to 'Edit', edit_member_path(@member) %> |
-<%= link_to 'Back', members_path %>
-
+<div class="member_table">
+  <table id="member">
+    <tr>
+      <th>UIN</th>
+      <td><%= @member.uin %></td>
+    </tr>
+    <tr>
+      <th>First Name</th>
+      <td><%= @member.first_name %></td>
+    </tr>
+    <tr>
+      <th>Last Name</th>
+      <td><%= @member.last_name %></td>
+    </tr>
+    <tr>
+      <th>Email</th>
+      <td><%= @member.email %></td>
+    </tr>
+    <tr>
+      <th>Department</th>
+      <td><%= @member.department %></td>
+    </tr>
+    <tr>
+      <th>Designation</th>
+      <td><%= @member.designation %></td>
+    </tr>
+    <tr>
+      <th>Paying</th>
+      <td><%= @member.paying %></td>
+    </tr>
+    <tr>
+      <th>Status</th>
+      <td><%= @member.status %></td>
+    </tr> 
+    <tr>
+      <th>Events</th>
+      <td>
+        <% @member.events.each do |event| %>
+          <%= event.title %><br>
+        <% end %>
+      </td> 
+    </tr>
+  </table>
+</div>
+<div class="bottom_buttons">
+<%= button_to 'Edit', edit_member_path(@member), class: "bottom_button1", method: :get %>
+<%= button_to 'Back', members_path, class: "bottom_button2", method: :get %>
+</div>
