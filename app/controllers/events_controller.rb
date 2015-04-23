@@ -14,7 +14,7 @@ class EventsController < ApplicationController
 
   def create
     @event = Event.new(event_params)
-    @event.tracked = false
+    #@event.tracked = false
     if event_params[:invite] == "all"
     @members = Member.all
 
