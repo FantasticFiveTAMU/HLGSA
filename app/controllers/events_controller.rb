@@ -17,20 +17,20 @@ class EventsController < ApplicationController
     #@event.tracked = false
     if event_params[:invite] == "all"
     @members = Member.all
-
     @event.members << @members
-    @mail_list = @members.map(&:email)
-    EventMailer.event_invite(@mail_list, @event).deliver!
     elsif event_params[:invite] == "officers"
     @members = Member.where(designation: 'officer')
     @event.members << @members
-    @mail_list = @members.map(&:email)
-    EventMailer.event_invite(@mail_list, @event).deliver!
-
     end 
 
     if @event.save
-	flash[:notice] = "Event successfully created"
+			if @event.members.any?
+    		@mail_list = @event.members.map(&:email)
+    		EventMailer.event_invite(@mail_list, @event).deliver!
+    		flash[:notice] = "Event successfully created"
+    	else
+    		flash[:notice] = "Event successfully created. No members invited"
+    	end
       redirect_to @event
     else
       render 'new'
@@ -54,9 +54,13 @@ class EventsController < ApplicationController
 			end 
 
     if @event.update_attributes(event_params)
-flash[:notice] = "Event successfully updated"
-      @mail_list = @members.map(&:email)
-      EventMailer.event_update(@mail_list, @event).deliver!
+      if @event.members.any?
+      	@mail_list = @event.members.map(&:email)
+      	EventMailer.event_update(@mail_list, @event).deliver!
+      	flash[:notice] = "Event successfully updated"
+      else
+      	flash[:notice] = "Event successfully updated. No members invited"
+      end
       redirect_to @event
     else
       render 'edit'
