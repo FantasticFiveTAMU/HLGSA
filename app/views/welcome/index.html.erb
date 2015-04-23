@@ -3,18 +3,11 @@
   <link rel="stylesheet" href="../../assets/stylesheets/login.css" type="text/css">
 </head>
 <body>
-
-
-    <%= link_to "Log out", logout_path, method: :delete %>
-
-<div class="body">
-  <div class="banner">
-<h1 class="title">HLGSA</h1>
-</div>
-<div class="card">
-  <div class = "list">
-  <%= link_to 'Enter Members', members_path %><br>
-<%= link_to 'Enter Events', events_path %>
-<div>
-
-</div>
+<%= link_to "Log out", logout_path, method: :delete %>
+  <div class="button_card">
+    <div class = "button_list">
+      <%= button_to 'Members', members_path, class: "members_button", method: :get %><br>
+      <%= button_to 'Events', events_path, class: "events_button", method: :get %>
+    </div>
+  </div>
+</body>

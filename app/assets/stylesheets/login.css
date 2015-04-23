@@ -7,12 +7,14 @@
   margin:8px;
   padding:10px;
 }
-.banner{
-  background: #500000;
-  height:70px;
 
+.list a {
+text-decoration: none;
+font-family: "proxima-nova",sans-serif,'Helvetica Neue',Helvetica,Arial,sans-serif;
+font-size: 20px;
+font-style: inherit;
+color: #500000;
 }
-
 .list{
 position: relative;
 top: 30%;
@@ -28,9 +30,9 @@ h1{
   font-size:40px;
 }
 .card {
-  margin:80px auto;
+  margin:15px auto;
   width: 234px;
-  height: 250px; /*Make it a fixed value if all the cards should be of fixed height*/
+  height: 240px; /*Make it a fixed value if all the cards should be of fixed height*/
   padding: 40px 40px;
   overflow: hidden;
   -webkit-box-shadow: 0px 1px 5px 1px rgba(0, 0, 0, 0.2);
@@ -43,7 +45,7 @@ h1{
 
 
 h2.card-heading {
-    margin:20px auto 20px;
+    margin:10px auto 10px;
     display: block;
     font-weight: 500;
     font-size: xx-large;
