@@ -77,8 +77,8 @@ Hlgsatracker::Application.configure do
 	address:              'smtp.gmail.com',
   port:                 587,
   domain:               'gmail.com',
-  user_name:            ENV['GMAIL_USERNAME'],
-  password:             ENV['GMAIL_PASSWORD'],
+  user_name:            'saashlgsa',
+  password:             'saasmail0',
   authentication:       'plain',
   enable_starttls_auto: true  
 	}
