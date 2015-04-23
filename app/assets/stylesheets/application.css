@@ -102,7 +102,7 @@ h1 {
 }
 
 .bottom_buttons {
-	margin-top: 10px;
+  margin-top: 10px;
   float: left;
   margin-left: 50%;
 }
@@ -119,6 +119,12 @@ h1 {
   margin-left: 5px;
 }
 
+
+.help_page_button {
+  width: 130px;
+  margin-left: -65px;	
+}
+
 #inner_table {
     border-collapse: collapse;
 }
@@ -130,6 +136,21 @@ h1 {
 
 #inner_table td {
 	border-color: white;
+}
+
+.notice {
+	text-align: center;
+	margin-top: 5px;
+	background-color: aqua;
+}
+
+.help_content {
+	width: 90%;
+	margin-top: 80px;
+	position: absolute;
+	padding-bottom: 50px;
+	margin-left: 5%;
+	margin-right: 5%;
 }
 
 
