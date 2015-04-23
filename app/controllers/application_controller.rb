@@ -4,4 +4,5 @@ class ApplicationController < ActionController::Base
   def authenticate
     redirect_to(login) if $user.nil?
   end
+  
 end
