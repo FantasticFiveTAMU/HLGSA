@@ -6,6 +6,7 @@ Hlgsatracker::Application.routes.draw do
     post 'login' => 'sessions#create'
     delete 'logout' => 'sessions#destroy'
   get 'welcome/index'
+  get 'welcome/help'
   resources :members
   resources :events
   resources :users

@@ -1,8 +1,9 @@
 class MembersController < ApplicationController
+  before_filter :authenticate
   def new
     @member = Member.new
   end
- 
+
   def index
     @members = Member.all
   end
