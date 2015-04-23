@@ -55,6 +55,7 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'debugger'
 
+gem 'figaro'
 
 group :test, :development do
   gem 'rspec-rails'

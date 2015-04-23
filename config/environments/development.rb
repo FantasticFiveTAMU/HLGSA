@@ -35,6 +35,7 @@ Hlgsatracker::Application.configure do
   # Expands the lines which load the assets
   config.assets.debug = true
 
+	#Mailer Details
 	config.action_mailer.default_url_options = { :host => 'localhost:3000' }
 	config.action_mailer.delivery_method = :smtp
 	config.action_mailer.perform_deliveries = true # I can't believe I have to add this option. Does it even exist? I found it on google.
@@ -42,8 +43,8 @@ Hlgsatracker::Application.configure do
 	address:              'smtp.gmail.com',
   port:                 587,
   domain:               'localhost:3000',
-  user_name:            'saashlgsa',
-  password:             'saasmail0',
+  user_name:            ENV['GMAIL_USERNAME'],
+  password:             ENV['GMAIL_PASSWORD'],
   authentication:       'plain',
   enable_starttls_auto: true  
 	}

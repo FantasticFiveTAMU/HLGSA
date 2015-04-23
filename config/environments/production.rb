@@ -67,4 +67,21 @@ Hlgsatracker::Application.configure do
   # Log the query plan for queries taking more than this (works
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
+  
+  
+  #Mailer Details
+	config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+	config.action_mailer.delivery_method = :smtp
+	config.action_mailer.perform_deliveries = true # I can't believe I have to add this option. Does it even exist? I found it on google.
+	config.action_mailer.smtp_settings = {
+	address:              'smtp.gmail.com',
+  port:                 587,
+  domain:               'localhost:3000',
+  user_name:            ENV['GMAIL_USERNAME'],
+  password:             ENV['GMAIL_PASSWORD'],
+  authentication:       'plain',
+  enable_starttls_auto: true  
+	}
+	
+	
 end
