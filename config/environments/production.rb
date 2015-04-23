@@ -70,13 +70,13 @@ Hlgsatracker::Application.configure do
   
   
   #Mailer Details
-	config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+	config.action_mailer.default_url_options = { :host => 'www.hlgsatracker.herokuapp.com' }
 	config.action_mailer.delivery_method = :smtp
 	config.action_mailer.perform_deliveries = true # I can't believe I have to add this option. Does it even exist? I found it on google.
 	config.action_mailer.smtp_settings = {
 	address:              'smtp.gmail.com',
   port:                 587,
-  domain:               'localhost:3000',
+  domain:               'www.gmail.com',
   user_name:            ENV['GMAIL_USERNAME'],
   password:             ENV['GMAIL_PASSWORD'],
   authentication:       'plain',
