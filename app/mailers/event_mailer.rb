@@ -9,13 +9,13 @@ class EventMailer < ActionMailer::Base
 	def event_invite(mail_list, event)
 		@event = event
 		@mail_list = mail_list
-		mail(to: @mail_list, subject: 'HLGSA Event')
+		mail(bcc: @mail_list, subject: 'HLGSA Event')
 	end
 	
 	def event_update(mail_list, event)
 		@event = event
 		@mail_list = mail_list
-		mail(to: @mail_list, subject: 'HLGSA Event Update')
+		mail(bcc: @mail_list, subject: 'HLGSA Event Update')
 	end
 
 end
