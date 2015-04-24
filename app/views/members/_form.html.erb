@@ -15,17 +15,17 @@
   <% end %>
 
   <p>
-    <%= f.label :uin %><br>
+    UIN<br>
     <%= f.number_field :uin %>
   </p>
  
   <p>
-    <%= f.label :first_name %><br>
+    First Name<br>
     <%= f.text_field :first_name %>
   </p>
 
   <p>
-    <%= f.label :last_name %><br>
+    Last Name<br>
     <%= f.text_field :last_name %>
   </p>
  
@@ -41,25 +41,25 @@
  
   <p>
     <%= f.label :designation %><br>
-    <%= f.radio_button :designation, 'member', :checked => true %>
+    <%= f.radio_button :designation, 'Member', :checked => true %>
     <%= label :designation_member, 'Member' %>
-    <%= f.radio_button :designation, 'officer' %>
+    <%= f.radio_button :designation, 'Officer' %>
     <%= label :designation_officer, 'Officer' %>
   </p>
 
   <p>
     <%= f.label :paying %><br>
-    <%= f.radio_button :paying, 'no', :checked => true %>
+    <%= f.radio_button :paying, 'No', :checked => true %>
     <%= label :paying_no, 'No' %>
-    <%= f.radio_button :paying, 'yes' %>
+    <%= f.radio_button :paying, 'Yes' %>
     <%= label :paying_yes, 'Yes' %>
   </p>
 
   <p>
     <%= f.label :status %><br>
-    <%= f.radio_button :status, 'student', :checked => true %>
+    <%= f.radio_button :status, 'Student', :checked => true %>
     <%= label :status_student, 'Student' %>
-    <%= f.radio_button :status, 'graduated' %>
+    <%= f.radio_button :status, 'Graduated' %>
     <%= label :status_graduated, 'Graduated' %>
   </p>
 

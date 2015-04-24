@@ -1,5 +1,8 @@
 <h1>Events</h1>
 <div class="top_buttons">
+  <% if flash[:notice] %>
+    <div class="notice"><%= flash[:notice] %></div>
+  <% end %>
 <%= button_to 'Home', welcome_index_path, class: "page_button1", method: :get %>
 <%= button_to 'New Event', new_event_path, class: "page_button2", method: :get %>
 </div>
@@ -16,13 +19,16 @@
       <tr>
         <td><%= event.title %></td>
         <td><%= event.date %></td>
-        <td><%= event.time.to_s(:time) %></td>
+        <td><%= event.time %></td>
+        
         <td class="action_button"><%= button_to 'Show Details', event_path(event), class: "action_button", method: :get %></td>
-        <td class="action_button"><%= button_to 'Edit Event', edit_event_path(event), class: "action_button", method: :get %></td>
-        <td class="action_button"><%= button_to 'Delete Event', event_path(event), class: "action_button",
+	  <% if !event.tracked %>
+        <td class="action_button" id="edit_button"><%= button_to 'Edit Event', edit_event_path(event), class: "action_button", method: :get %></td> <% end %>
+        <td class="action_button"  id="delete_button"><%= button_to 'Delete Event', event_path(event), class: "action_button",
               method: :delete,
               data: { confirm: 'Are you sure?' } %></td>
-        <td class="action_button" id="track_button"><%= button_to 'Track Attendance', track_path(:id => event.id), class: "action_button" %></td>
+	  <% if !event.tracked %>
+        <td class="action_button" id="track_button"><%= button_to 'Track Attendance', track_path(:id => event.id), class: "action_button" %></td> <% end %>
       </tr>
     <% end %>
   </table>

@@ -55,8 +55,11 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'debugger'
 
+
 group :test, :development do
   gem 'rspec-rails'
   gem 'ZenTest'
   gem 'autotest-rails'
+  gem 'simplecov'
+
 end
