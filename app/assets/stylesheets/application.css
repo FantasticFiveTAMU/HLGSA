@@ -123,6 +123,14 @@ h1 {
   margin-left: 5px;
 }
 
+.create_button {
+    float: left;
+    margin-left: 50%;
+}
+
+.create_button input{
+  margin-left: -220px;
+}
 
 .help_page_button {
   width: 130px;
@@ -142,6 +150,114 @@ h1 {
 	border-color: white;
 }
 
+.new_event_table {
+	display: block;
+  	margin-top: 20px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 500px;
+	background-color: white;
+}
+
+#event_invite_all {
+ width: 20px; 
+ height: 20px; 
+ vertical-align: middle;
+}
+
+#event_invite_officers {
+ width: 20px; 
+ height: 20px; 
+ vertical-align: middle;
+ margin-left: 10px;
+}
+
+.new_event_table td label {
+  height: 20px; 
+  margin-left: 10px; 
+  vertical-align: middle;
+}
+
+#new_event {
+	border-collapse: collapse;
+}
+
+.new_event_table th {
+	width: 200px;
+	border: 2px solid black;
+	background-color: wheat;
+	padding: 3px;
+}
+
+.new_event_table td {
+  width: 500px;
+	border: 2px solid black;
+	padding: 3px;
+	color: #008080;
+        padding-left:10px;
+}
+
+.new_member_table {
+	display: block;
+  	margin-top: 20px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 500px;
+	background-color: white;
+}
+
+#member_designation_member, #member_paying_no,  #member_status_student {
+ width: 20px; 
+ height: 20px; 
+ vertical-align: middle;
+}
+
+#member_designation_officer {
+ width: 20px; 
+ height: 20px; 
+ vertical-align: middle;
+ margin-left: 40px;
+}
+
+#member_paying_yes {
+ width: 20px; 
+ height: 20px; 
+ vertical-align: middle;
+ margin-left: 82px;
+}
+
+#member_status_graduated {
+ width: 20px; 
+ height: 20px; 
+ vertical-align: middle;
+ margin-left: 44px;
+}
+
+.new_member_table td label {
+  height: 20px; 
+  margin-left: 10px; 
+  vertical-align: middle;
+}
+
+#new_member {
+	border-collapse: collapse;
+}
+
+.new_member_table th {
+	width: 200px;
+	border: 2px solid black;
+	background-color: wheat;
+	padding: 3px;
+}
+
+.new_member_table td {
+  width: 500px;
+	border: 2px solid black;
+	padding: 3px;
+	color: #008080;
+        padding-left:10px;
+}
+
 .notice {
 	text-align: center;
 	margin-top: 5px;
@@ -155,6 +271,10 @@ h1 {
 	padding-bottom: 50px;
 	margin-left: 5%;
 	margin-right: 5%;
+}
+
+.cancel_button {
+  margin-left: 20px;
 }
 
 
