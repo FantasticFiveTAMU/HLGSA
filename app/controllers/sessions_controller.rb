@@ -7,7 +7,8 @@ class SessionsController < ApplicationController
       log_in $user
       redirect_to welcome_index_path
     else
-      render new
+      flash.now[:error] ='invalid Username/Password'
+      render 'new'
     end
   end
   def destroy

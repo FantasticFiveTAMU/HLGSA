@@ -14,6 +14,7 @@
     <input id="password" type="password" placeholder="Password"-->
 
   <%= f.submit "Log in", class: 'submit_button'%>
+  <%=flash[:error]%>
   <%end%>
 
 </div>
