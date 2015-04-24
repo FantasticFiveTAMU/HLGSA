@@ -25,6 +25,10 @@ table#events th, table#events td{
   text-align: center;
 }
 
+table#events td {
+  color: #008080;
+}
+
 table#events td.action_button{
   width: 12%;
 }
