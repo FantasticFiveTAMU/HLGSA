@@ -1,10 +1,24 @@
 <%= form_for @event, url: attend_path do |a| %>
-    <% @event.members.each do |member| %>
-       <%= check_box_tag 'event_member_id[]', member.id %>
-	<%= hidden_field_tag 'event_id', @event.id %> 
-       <%= member.last_name %>
-    <% end %>
-  <p>
+  <div class="track_event_table">
+    <table id="track_event">
+      <tr>
+	<th>Event</th>
+	<td><%= @event.title %></td>
+      </tr>
+      <tr>
+	<th>Invited Members</th>
+	<td>
+          <% @event.members.each do |member| %>
+            <%= check_box_tag 'event_member_id[]', member.id %>
+	    <%= hidden_field_tag 'event_id', @event.id %> 
+            <%= member.last_name %><br>
+          <% end %>
+	</td>
+      </tr>
+    </table>
+  </div>
+  </div>
+  <div class="create_button">
     <%= a.submit 'Track Attendance'%>
-  </p>
+  </div>
 <% end %>

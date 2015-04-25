@@ -1,12 +1,4 @@
-<p>
-  <strong>Event:</strong>
-  <%= @event.title %>
-</p>
-<p>
-  <strong>Invited Members:</strong>
-  <%= render 'att' %>
-</p>
-
-
-<%= button_to 'Cancel', events_path, method: :get %>
+<h1>Track Event</h1>
+<%= render 'att' %>
+<%= button_to 'Cancel', events_path, class: "cancel_button", method: :get %>
 

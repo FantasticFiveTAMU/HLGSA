@@ -5,6 +5,7 @@
   margin-left: 5%;
   margin-right: 5%;
   margin-top: 100px;
+  background-color: white;
 }
 
 table#events {
@@ -23,6 +24,10 @@ table#events th{
 table#events th, table#events td{
   padding: 4px;
   text-align: center;
+}
+
+table#events td {
+  color: #008080;
 }
 
 table#events td.action_button{

@@ -6,6 +6,7 @@
   margin-left: 5%;
   margin-right: 5%;
   margin-top: 100px;
+  background-color: white;
 }
 
 table#members {
@@ -27,6 +28,9 @@ table#members th, table#members td{
   text-align: center;
 }
 
+table#members td {
+  color: #008080;
+}
 table#members td.action_button{
   width: 15%;
 }
