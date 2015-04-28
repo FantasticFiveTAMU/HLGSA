@@ -18,23 +18,23 @@
   <table id="new_event">
     <tr>
       <th><%= f.label :title %></th>
-      <td><%= f.text_field :title %></td>
+      <td><%= f.text_field :title, placeholder: "Event Title" %></td>
     </tr>
     <tr>
       <th><%= f.label :date %></th>
-      <td><%= f.text_field :date %></td>
+      <td><%= f.text_field :date, placeholder: "YYYY-MM-DD" %></td>
     </tr>
     <tr>
       <th><%= f.label :time %></th>
-      <td><%= f.text_field :time %></td>
+      <td><%= f.text_field :time, placeholder: "HH:MM AM/PM" %></td>
     </tr>
     <tr>
       <th><%= f.label :location %></th>
-      <td><%= f.text_field :location %></td>
+      <td><%= f.text_field :location, placeholder: "Event Location" %></td>
     </tr>
     <tr>
       <th><%= f.label :description %></th>
-      <td><%= f.text_area :description %></td>
+      <td><%= f.text_area :description, placeholder: "Event Desrciption" %></td>
     </tr>
     <tr>
       <th><%= f.label :invite %></th>

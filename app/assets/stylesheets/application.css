@@ -42,7 +42,15 @@
   background-position: top center;
   background-size: 485px 150px;
   height: 150px;
-  margin-top: 20px;
+  margin: 15px auto;
+  width: 500px;
+  overflow: hidden;
+  -webkit-box-shadow: 0px 3px 3px 3px rgba(0,0,0,0.6);
+  -moz-box-shadow: 0px 3px 3px 3px rgba(0,0,0,0.6);
+  box-shadow: 0px 3px 3px 3px rgba(0,0,0,0.6);
+  background-color: #fff;
+  border-radius: 3px;
+  text-align: center;
 }
 
 h1 {
@@ -301,19 +309,38 @@ h1 {
 }
 
 .notice {
-	text-align: center;
-	margin-top: 5px;
-	background-color: aqua;
+  margin: 10px auto;
+  background-color: rgb(200, 180, 180);
+  width: 40%;
+  padding: 2px;
+  color: black;
+  font-size: 13px;
+  text-align: center;
+  border-radius: 4px;
+}
+
+#error_explanation {
+  margin: 10px auto;
+  background-color: rgb(200, 180, 180);
+  width: 40%;
+  padding: 2px;
+  color: black;
+  font-size: 13px;
+  text-align: center;
+  border-radius: 4px;
 }
 
 .help_content {
-	width: 90%;
+	width: 80%;
 	margin-top: 80px;
 	position: absolute;
+	padding: 50px;
 	padding-bottom: 50px;
 	margin-left: 5%;
 	margin-right: 5%;
-  color: white;
+  	color: black;
+	background-color: whitesmoke;
+	border-radius: 4px;
 }
 
 .cancel_button {

@@ -18,23 +18,23 @@
   <table id="new_member">
     <tr>
       <th>UIN</th>
-      <td><%= f.number_field :uin %></td>
+      <td><%= f.number_field :uin, placeholder: "Last 4 digits of UIN" %></td>
     </tr>
     <tr>
       <th>First Name</th>
-      <td><%= f.text_field :first_name %></td>
+      <td><%= f.text_field :first_name, placeholder: "First Name" %></td>
     </tr>
     <tr>
       <th>Last Name</th>
-      <td><%= f.text_field :last_name %></td>
+      <td><%= f.text_field :last_name, placeholder: "Last Name" %></td>
     </tr>
     <tr>
       <th><%= f.label :email %></th>
-      <td><%= f.email_field :email %></td>
+      <td><%= f.email_field :email, placeholder: "Email" %></td>
     </tr>
     <tr>
       <th><%= f.label :department %></th>
-      <td><%= f.text_field :department %></td>
+      <td><%= f.text_field :department, placeholder: "Department Code" %></td>
     </tr>
     <tr>
       <th><%= f.label :designation %></th>

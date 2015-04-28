@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
       log_in $user
       redirect_to welcome_index_path
     else
-      flash.now[:error] ='invalid Username/Password'
+      flash.now[:error] ='Invalid Username/Password'
       render 'new'
     end
   end
