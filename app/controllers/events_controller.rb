@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-
+before_filter :authenticate
   def new
     @event = Event.new 
   end
