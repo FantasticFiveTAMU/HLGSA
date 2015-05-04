@@ -11,7 +11,7 @@
           <% @event.members.each do |member| %>
             <%= check_box_tag 'event_member_id[]', member.id %>
 	    <%= hidden_field_tag 'event_id', @event.id %> 
-            <%= member.last_name %><br>
+            <%= member.first_name %> <%= member.last_name %><br>
           <% end %>
 	</td>
       </tr>
