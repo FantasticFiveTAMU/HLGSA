@@ -27,9 +27,4 @@ describe MembersController do
     end
   end
 
-  describe '#create' do
-    it '' do
-    end
-  end
-
 end
