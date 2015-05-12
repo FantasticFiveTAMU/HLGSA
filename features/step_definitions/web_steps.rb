@@ -50,6 +50,15 @@ Given(/^a member exists with department "(.*?)" and designation "(.*?)" and emai
 	Member.create(department: arg1, designation: arg2, email: arg3, first_name: arg4, last_name: arg5, paying: arg6, status: arg7, uin: arg8)
 end
 
+Given(/^an event exists with title "(.*?)" and date "(.*?)" and time "(.*?)" and location "(.*?)" and description "(.*?)" and invite "(.*?)"$/) do |arg1, arg2, arg3, arg4, arg5, arg6|
+  Event.create(title: arg1, date: arg2, time: arg3, location: arg4, description: arg5, invite: arg6)
+end
+
+Given /^there is a user/ do
+	User.create(name:"grant",email:"gwilde1@tamu.edu",password:"password",password_confirmation:"password")
+visit path_to("the login page")
+end 
+
 
 When /^(?:|I )go to (.+)$/ do |page_name|
   visit path_to(page_name)
@@ -82,8 +91,12 @@ end
 # TODO: Add support for checkbox, select or option
 # based on naming conventions.
 #
-When /^I confirm delete popup$/ do
+When /^I confirm delete member popup$/ do
 	visit path_to("the Listing members pagepage_name")
+end
+
+When /^I confirm delete event popup$/ do
+	visit path_to("the Listing events pagepage_name")
 end
 
 When /^(?:|I )fill in the following:$/ do |fields|
