@@ -4,6 +4,8 @@ ruby '1.9.3'
 
 gem 'rails', '3.2.16'
 #gem 'rails', '4.2.1'
+gem 'bcrypt-ruby', '~> 3.0.0'
+
 
 gem 'strong_parameters'
 
@@ -64,3 +66,13 @@ end
 
 # To use debugger
 # gem 'debugger'
+
+gem 'figaro'
+
+group :test, :development do
+  gem 'rspec-rails'
+  gem 'ZenTest'
+  gem 'autotest-rails'
+  gem 'simplecov'
+
+end

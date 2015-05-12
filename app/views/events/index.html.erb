@@ -1,24 +1,35 @@
-<h1>Listing events</h1>
-<%= link_to 'Home', welcome_index_path %>
-<%= link_to 'New event', new_event_path %>
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Date</th>
-    <th>Time</th>
-  </tr>
- 
-  <% @events.each do |event| %>
+<h1>Events</h1>
+<div class="top_buttons">
+  <% if flash[:notice] %>
+    <div class="notice"><%= flash[:notice] %></div>
+  <% end %>
+<%= button_to 'Home', welcome_index_path, class: "page_button1", method: :get %>
+<%= button_to 'New Event', new_event_path, class: "page_button2", method: :get %>
+</div>
+<div class="events_table">
+  <table id="events">
     <tr>
-      <td><%= event.title %></td>
-      <td><%= event.date %></td>
-      <td><%= event.time.to_s(:time) %></td>
-      <td><%= link_to 'Show', event_path(event) %></td>
-      <td><%= link_to 'Edit', edit_event_path(event) %></td>
-      <td><%= link_to 'Destroy', event_path(event),
+      <th>Title</th>
+      <th>Date</th>
+      <th>Time</th>
+      <th colspan="4">Actions</th>
+    </tr>
+ 
+    <% @events.each do |event| %>
+      <tr>
+        <td><%= event.title %></td>
+        <td><%= event.date %></td>
+        <td><%= event.time %></td>
+        
+        <td class="action_button"><%= button_to 'Show Details', event_path(event), class: "action_button", method: :get %></td>
+	  <% if !event.tracked %>
+        <td class="action_button" id="edit_button"><%= button_to 'Edit Event', edit_event_path(event), class: "action_button", method: :get %></td> <% end %>
+        <td class="action_button"  id="delete_button"><%= button_to 'Delete Event', event_path(event), class: "action_button",
               method: :delete,
               data: { confirm: 'Are you sure?' } %></td>
-<td><%= link_to 'Track Attendance', track_path(:id => event.id) %></td>
-    </tr>
-  <% end %>
-</table>
+	  <% if !event.tracked %>
+        <td class="action_button" id="track_button"><%= button_to 'Track Attendance', track_path(:id => event.id), class: "action_button" %></td> <% end %>
+      </tr>
+    <% end %>
+  </table>
+</div>

@@ -14,41 +14,41 @@
     </div>
   <% end %>
 
-  <p>
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </p>
- 
-  <p>
-    <%= f.label :date %><br>
-    <%= f.text_field :date %>
-  </p>
-
-  <p>
-    <%= f.label :time %><br>
-    <%= f.text_field :time %>
-  </p>
- 
-  <p>
-    <%= f.label :location %><br>
-    <%= f.text_field :location %>
-  </p>
- 
-  <p>
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
-  </p>
-
-<p>
-    <%= f.label :invite %><br>
-    <%= f.radio_button :invite, 'all', :checked => true %>
-    <%= label :status_all, 'All Members' %>
-    <%= f.radio_button :invite, 'officers' %>
-    <%= label :status_officers, 'Officers Only' %>
-</p>
-
-  <p>
-    <%= f.submit %>
-  </p>
+  <div class="new_event_table">
+  <table id="new_event">
+    <tr>
+      <th><%= f.label :title %></th>
+      <td><%= f.text_field :title, placeholder: "Event Title" %></td>
+    </tr>
+    <tr>
+      <th><%= f.label :date %></th>
+      <td><%= f.text_field :date, placeholder: "YYYY-MM-DD" %></td>
+    </tr>
+    <tr>
+      <th><%= f.label :time %></th>
+      <td><%= f.text_field :time, placeholder: "HH:MM AM/PM" %></td>
+    </tr>
+    <tr>
+      <th><%= f.label :location %></th>
+      <td><%= f.text_field :location, placeholder: "Event Location" %></td>
+    </tr>
+    <tr>
+      <th><%= f.label :description %></th>
+      <td><%= f.text_area :description, placeholder: "Event Desrciption" %></td>
+    </tr>
+    <tr>
+      <th><%= f.label :invite %></th>
+      <td>
+	<%= f.radio_button :invite, 'all', :checked => true %>
+        <%= label :status_all, 'All Members' %>
+        <%= f.radio_button :invite, 'officers' %>
+        <%= label :status_officers, 'Officers Only' %>
+      </td>
+    </tr>    
+  </table>
+</div>
+<div class="create_button">
+	<%= f.submit %>
+</div>
 <% end %>
 

@@ -1,4 +1,26 @@
-<h1>Welcome to HLGSA Tracker!</h1>
-
-<%= link_to 'Enter Members', members_path %>
-<%= link_to 'Enter Events', events_path %>
+<!DOCTYPE html >
+<head>
+  <link rel="stylesheet" href="../../assets/stylesheets/login.css" type="text/css">
+</head>
+<body>
+  <div class="button_card">
+    <table class = "button_list">
+      <tr>
+	<td>
+          <%= button_to 'Members', members_path, class: "members_button", method: :get %>
+	</td>
+	<td>
+          <%= button_to 'Events', events_path, class: "events_button", method: :get %>
+	</td>
+      </tr>
+      <tr>
+	<td>      
+	  <%= button_to 'Help', welcome_help_path, class: "help_button", method: :get %>
+	</td>
+	<td>
+          <%= button_to 'Log Out', logout_path, class: "logout_button", method: :delete %>
+	</td>
+      </tr>    
+    </table>
+  </div>
+</body>

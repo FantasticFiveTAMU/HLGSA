@@ -1,3 +1,70 @@
 // Place all the styles related to the welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.events_button {
+  background-image: url("/assets/events.svg");
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: 80px 80px;
+  background-origin: content-box;
+  height: 100px;
+  width: 250px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 1.1em;
+  margin-left: 20px;
+}
+
+.members_button {
+  background-image: url("/assets/members.png");
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: 80px 80px;
+  background-origin: content-box;
+  height: 100px;
+  width: 250px;
+  margin: 10px auto !important;
+  font-size: 1.1em;
+}
+
+.help_button {
+  background-image: url("/assets/help.png");
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: 80px 80px;
+  background-origin: content-box;
+  height: 100px;
+  width: 250px;
+  margin: 10px auto !important;
+  font-size: 1.1em;
+}
+
+.logout_button {
+  background-image: url("/assets/logout.png");
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: 80px 80px;
+  background-origin: content-box;
+  height: 100px;
+  width: 250px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 20px;
+  font-size: 1.1em;
+}
+
+.button_card {
+  margin: 15px auto;
+  width: 530px;
+  height: 245px;
+  padding: 30px 30px;
+  overflow: hidden;
+  -webkit-box-shadow: 0px 1px 5px 1px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0px 1px 5px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 1px 5px 1px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+  border-radius: 3px;
+  text-align: center;
+}
+
+

@@ -1,44 +1,55 @@
-<p>
-  <strong>Title:</strong>
-  <%= @event.title %>
-</p>
- 
-<p>
-  <strong>Date:</strong>
-  <%= @event.date %>
-</p>
-
-<p>
-  <strong>Time:</strong>
-  <%= @event.time.to_s(:time) %>
-</p>
- 
-<p>
-  <strong>Location:</strong>
-  <%= @event.location %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @event.description %>
-</p>
-
-<p>
-<strong>Invited:</strong>
-<table>
-  <tr>
-    <th>Last Name</th>
-    <th>First Name</th>
-  </tr>
-<% @event.members.each do |member| %>
-<tr>
-   <td><%= member.last_name %></td>
-   <td><%= member.first_name %></td>
-</tr>
-<%end %>
-</table>
-</p>
-
-<%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', events_path %>
+<% if flash[:notice] %>
+    <div class="notice"><%= flash[:notice] %></div>
+<% end %>
+<div class="event_table">
+  <table id="event">
+    <tr>
+      <th>Title</th>
+      <td><%= @event.title %></td>
+    </tr>
+    <tr>
+      <th>Date</th>
+      <td><%= @event.date %></td>
+    </tr>
+    <tr>
+      <th>Time</th>
+      <td><%= @event.time %></td>
+    </tr>
+    <tr>
+      <th>Location</th>
+      <td><%= @event.location %></td>
+    </tr>
+    <tr>
+      <th>Description</th>
+      <td><%= @event.description %></td>
+    </tr>
+    <tr>
+      <% if !@event.tracked %>
+      <th>Invited</th>
+      <% else %>
+      <th>Attended</th>
+      <% end %>
+      <td>
+        <table id="inner_table">
+  				<tr>
+    				<th>Last Name</th>
+    				<th>First Name</th>
+  				</tr>
+					<% @event.members.each do |member| %>
+						<tr>
+   						<td><%= member.last_name %></td>
+   						<td><%= member.first_name %></td>
+						</tr>
+					<%end %>
+				</table>
+      </td> 
+    </tr>
+  </table>
+</div>
+<div class="bottom_buttons">
+	<% if !@event.tracked %>
+		<%= button_to 'Edit', edit_event_path(@event), class: "bottom_button1", method: :get %>
+	<% end %>
+	<%= button_to 'Back', events_path, class: "bottom_button2", method: :get %>
+</div>
 

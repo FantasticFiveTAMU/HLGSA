@@ -14,57 +14,59 @@
     </div>
   <% end %>
 
-  <p>
-    <%= f.label :uin %><br>
-    <%= f.number_field :uin %>
-  </p>
- 
-  <p>
-    <%= f.label :first_name %><br>
-    <%= f.text_field :first_name %>
-  </p>
-
-  <p>
-    <%= f.label :last_name %><br>
-    <%= f.text_field :last_name %>
-  </p>
- 
-  <p>
-    <%= f.label :email %><br>
-    <%= f.email_field :email %>
-  </p>
- 
-  <p>
-    <%= f.label :department %><br>
-    <%= f.text_field :department %>
-  </p>
- 
-  <p>
-    <%= f.label :designation %><br>
-    <%= f.radio_button :designation, 'member', :checked => true %>
-    <%= label :designation_member, 'Member' %>
-    <%= f.radio_button :designation, 'officer' %>
-    <%= label :designation_officer, 'Officer' %>
-  </p>
-
-  <p>
-    <%= f.label :paying %><br>
-    <%= f.radio_button :paying, 'no', :checked => true %>
-    <%= label :paying_no, 'No' %>
-    <%= f.radio_button :paying, 'yes' %>
-    <%= label :paying_yes, 'Yes' %>
-  </p>
-
-  <p>
-    <%= f.label :status %><br>
-    <%= f.radio_button :status, 'student', :checked => true %>
-    <%= label :status_student, 'Student' %>
-    <%= f.radio_button :status, 'graduated' %>
-    <%= label :status_graduated, 'Graduated' %>
-  </p>
-
-  <p>
-    <%= f.submit %>
-  </p>
+  <div class="new_member_table">
+  <table id="new_member">
+    <tr>
+      <th>UIN</th>
+      <td><%= f.number_field :uin, placeholder: "Last 4 digits of UIN" %></td>
+    </tr>
+    <tr>
+      <th>First Name</th>
+      <td><%= f.text_field :first_name, placeholder: "First Name" %></td>
+    </tr>
+    <tr>
+      <th>Last Name</th>
+      <td><%= f.text_field :last_name, placeholder: "Last Name" %></td>
+    </tr>
+    <tr>
+      <th><%= f.label :email %></th>
+      <td><%= f.email_field :email, placeholder: "Email" %></td>
+    </tr>
+    <tr>
+      <th><%= f.label :department %></th>
+      <td><%= f.text_field :department, placeholder: "Department Code" %></td>
+    </tr>
+    <tr>
+      <th><%= f.label :designation %></th>
+      <td>
+	<%= f.radio_button :designation, 'Member', :checked => true %>
+        <%= label :designation_member, 'Member' %>
+        <%= f.radio_button :designation, 'Officer' %>
+        <%= label :designation_officer, 'Officer' %>
+      </td>
+    </tr>
+    <tr>
+      <th><%= f.label :paying %></th>
+      <td>
+	<%= f.radio_button :paying, 'No', :checked => true %>
+        <%= label :paying_no, 'No' %>
+        <%= f.radio_button :paying, 'Yes' %>
+        <%= label :paying_yes, 'Yes' %>
+      </td>
+    </tr>
+    <tr>
+      <th><%= f.label :status %></th>
+      <td>
+	<%= f.radio_button :status, 'Student', :checked => true %>
+        <%= label :status_student, 'Student' %>
+        <%= f.radio_button :status, 'Graduated' %>
+        <%= label :status_graduated, 'Graduated' %>
+      </td>
+    </tr>    
+  </table>
+</div>
+<div class="create_button">
+	<%= f.submit %>
+</div>
 <% end %>
 

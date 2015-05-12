@@ -1,0 +1,21 @@
+<!--h1>Welcome#index</h1>
+<p>Find me in app/views/welcome/index.html.erb</p-->
+<!DOCTYPE html >
+<body>
+<div class="card">
+  <h2 class="card-heading">Login</h2>
+  <%=form_for(:session, url: login_path) do |f|%>
+
+
+  <%= f.email_field :email, class: 'email-control', placeholder: "Login ID"%>
+    <%= f.password_field :password, class: 'password-control', placeholder: "Password"%>
+
+    <!--input id="username" type="email" placeholder="Email address"><br>
+    <input id="password" type="password" placeholder="Password"-->
+
+  <%= f.submit "Log in", class: 'submit_button'%>
+  <%=flash[:error]%>
+  <%end%>
+
+</div>
+</body>

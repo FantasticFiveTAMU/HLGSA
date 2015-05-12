@@ -11,3 +11,340 @@
  *= require_self
  *= require_tree .
  */
+.top_buttons {
+  float: left;
+  margin-left: 50%;
+}
+
+.page_button1 {
+  float: left;
+  width: 130px;
+  margin-left: -135px;
+}
+
+.page_button2 {
+  float: left;
+  width: 130px;
+  margin-left: 5px;
+}
+
+.action_button {
+  width: 90%;
+  white-space: normal;
+  height: auto;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+#hlgsalogo {
+  background-image: url("/assets/headerimage.jpg");
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: 485px 150px;
+  height: 150px;
+  margin: 15px auto;
+  width: 500px;
+  overflow: hidden;
+  -webkit-box-shadow: 0px 3px 3px 3px rgba(0,0,0,0.6);
+  -moz-box-shadow: 0px 3px 3px 3px rgba(0,0,0,0.6);
+  box-shadow: 0px 3px 3px 3px rgba(0,0,0,0.6);
+  background-color: #fff;
+  border-radius: 3px;
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+  color: #008080;
+}
+
+.member_table {
+	text-align: center;
+	display: block;
+  margin-top: 20px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 500px;
+	background-color: white;
+}
+
+#member {
+	border-collapse: collapse;
+}
+
+.member_table th {
+	width: 200px;
+	border: 2px solid black;
+	background-color: wheat;
+	padding: 3px;
+}
+
+.member_table td {
+  width: 300px;
+	border: 2px solid black;
+	padding: 3px;
+ color: #008080;
+}
+
+.event_table {
+	text-align: center;
+	display: block;
+  margin-top: 20px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 500px;
+	background-color: white;
+}
+
+#event {
+	border-collapse: collapse;
+}
+
+.event_table th {
+	width: 200px;
+	border: 2px solid black;
+	background-color: wheat;
+	padding: 3px;
+}
+
+.event_table td {
+  width: 300px;
+	border: 2px solid black;
+	padding: 3px;
+	color: #008080;
+}
+
+.bottom_buttons {
+  margin-top: 10px;
+  float: left;
+  margin-left: 50%;
+}
+
+.bottom_button1 {
+  float: left;
+  width: 130px;
+  margin-left: -135px;
+}
+
+.bottom_button2 {
+  float: left;
+  width: 130px;
+  margin-left: 5px;
+}
+
+.create_button {
+    float: left;
+    margin-left: 50%;
+}
+
+.create_button input{
+  margin-left: -220px;
+}
+
+.help_page_button {
+  width: 130px;
+  margin-left: -65px;	
+}
+
+#inner_table {
+    border-collapse: collapse;
+}
+
+#inner_table th {
+	border-color: white;
+	background-color: #D8D8AA;
+}
+
+#inner_table td {
+	border-color: white;
+}
+
+.new_event_table {
+	display: block;
+  	margin-top: 20px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 500px;
+	background-color: white;
+}
+
+#event_invite_all {
+ width: 20px; 
+ height: 20px; 
+ vertical-align: middle;
+}
+
+#event_invite_officers {
+ width: 20px; 
+ height: 20px; 
+ vertical-align: middle;
+ margin-left: 10px;
+}
+
+.new_event_table td label {
+  height: 20px; 
+  margin-left: 10px; 
+  vertical-align: middle;
+}
+
+#new_event {
+	border-collapse: collapse;
+}
+
+.new_event_table th {
+	width: 200px;
+	border: 2px solid black;
+	background-color: wheat;
+	padding: 3px;
+}
+
+.new_event_table td {
+  width: 500px;
+	border: 2px solid black;
+	padding: 3px;
+	color: #008080;
+        padding-left:10px;
+}
+
+.new_member_table {
+	display: block;
+  	margin-top: 20px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 500px;
+	background-color: white;
+}
+
+#member_designation_member, #member_paying_no,  #member_status_student {
+ width: 20px; 
+ height: 20px; 
+ vertical-align: middle;
+}
+
+#member_designation_officer {
+ width: 20px; 
+ height: 20px; 
+ vertical-align: middle;
+ margin-left: 40px;
+}
+
+#member_paying_yes {
+ width: 20px; 
+ height: 20px; 
+ vertical-align: middle;
+ margin-left: 82px;
+}
+
+#member_status_graduated {
+ width: 20px; 
+ height: 20px; 
+ vertical-align: middle;
+ margin-left: 44px;
+}
+
+.new_member_table td label {
+  height: 20px; 
+  margin-left: 10px; 
+  vertical-align: middle;
+}
+
+#new_member {
+	border-collapse: collapse;
+}
+
+.new_member_table th {
+	width: 200px;
+	border: 2px solid black;
+	background-color: wheat;
+	padding: 3px;
+}
+
+.new_member_table td {
+  width: 500px;
+	border: 2px solid black;
+	padding: 3px;
+	color: #008080;
+        padding-left:10px;
+}
+
+.track_event_table {
+	display: block;
+  	margin-top: 20px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 500px;
+	background-color: white;
+}
+
+.track_event_table td label {
+  height: 20px; 
+  margin-left: 10px; 
+  vertical-align: middle;
+}
+
+#track_event {
+	border-collapse: collapse;
+}
+
+.track_event_table th {
+	width: 200px;
+	border: 2px solid black;
+	background-color: wheat;
+	padding: 3px;
+}
+
+.track_event_table td {
+  width: 500px;
+	border: 2px solid black;
+	padding: 3px;
+	color: #008080;
+        padding-left:10px;
+}
+
+#event_member_id_{
+ width: 20px; 
+ height: 20px; 
+ vertical-align: middle;
+ margin: 0 !important;
+}
+
+.notice {
+  margin: 10px auto;
+  background-color: rgb(200, 180, 180);
+  width: 40%;
+  padding: 2px;
+  color: black;
+  font-size: 13px;
+  text-align: center;
+  border-radius: 4px;
+}
+
+#error_explanation {
+  margin: 10px auto;
+  background-color: rgb(200, 180, 180);
+  width: 40%;
+  padding: 2px;
+  color: black;
+  font-size: 13px;
+  text-align: center;
+  border-radius: 4px;
+}
+
+.help_content {
+	width: 80%;
+	margin-top: 80px;
+	position: absolute;
+	padding: 50px;
+	padding-bottom: 50px;
+	margin-left: 5%;
+	margin-right: 5%;
+  	color: black;
+	background-color: whitesmoke;
+	border-radius: 4px;
+}
+
+.cancel_button {
+  margin-left: 20px;
+}
+
+
