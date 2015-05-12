@@ -1,10 +1,8 @@
-Feature: Delete event
+Feature: Delete member
 
-Scenario: delete an event after add an event
+Scenario: delete a member after add a member
 
-	Given a member exists with department "CSCE" and designation "member_designation_officer" and email "gwilde1@tamu.edu" and first_name "Grant" and last_name "Wilde" and paying "member_paying_yes" and status "member_status_student" and uin: "1234"
-
-	Given an event exists with title "HLGSA Spring 2015 Open House" and date "04-01-2015" and time "07:00pm" and location "HRBB 124" and description "First meeting of the Srirng 2015 semester" and invite "event_invite_officers"
+	Given a member exists with department "CSCE" and designation "member_designation_member" and email "gwilde1@angelo.edu" and first_name "Grant" and last_name "Wilde" and paying "member_paying_yes" and status "member_status_student" and uin: "1234"
 
 	Given there is a user
 	And I am on the login page
@@ -12,10 +10,9 @@ Scenario: delete an event after add an event
 	And I fill in "session_password" with "password"
 	And I press "Log in"
 	Then I should be on the HLGSA home page
-	When I press "Events"
-	Then I should be on the Listing events page
-	Then I should see "HLGSA Spring 2015 Open House"
-	And I press "Delete Event"
-	And I confirm delete event popup
-	Then I should be on the Listing events page
-	And I should not see "HLGSA Spring 2015 Open House"
+	When I press "Members"
+	Then I should be on the Listing members page
+	And I press "Delete Member"
+	And I confirm delete member popup
+	Then I should be on the Listing members page
+	And I should not see "Grant"
