@@ -7,7 +7,8 @@ module NavigationHelpers
   #
   def path_to(page_name)
     case page_name
-
+	when /^the login\s?page$/
+	'/login'
 	when /^the home\s?page$/
 	'/'
 	when /^the HLGSA home page/
@@ -26,6 +27,8 @@ module NavigationHelpers
 	'/events/1'
 	when /^the Editing member page/
 	'/members/1/edit'
+	when /^the Editing event page/
+	'/events/1/edit'
     when /the home\s?page/
       '/'
 
